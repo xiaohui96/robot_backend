@@ -61,6 +61,9 @@ Route::apiResources([
     'labs' => 'Admin\Labs',
     'users' => 'Admin\Users',
     'robotConfig' => 'App\Robot',
+    'testrigs' => 'Admin\TestRigs',
+     'servers' => 'Admin\Servers',
+
 
 
 ]);

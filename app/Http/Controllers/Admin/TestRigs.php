@@ -34,7 +34,8 @@ class TestRigs extends Controller
                 "defaultAlgorithm",
                 "stepSize",
                 "monitorPacketSize",
-                "currentUser"
+                "currentUser",
+                "type" //摄像头只适用于实体设备类型 2019.12.04 ysw
               )
             ->get()
             ->toArray();
@@ -66,7 +67,8 @@ class TestRigs extends Controller
             "monitorPacketSize" => $form_data['monitorPacketSize'],
             "currentUser" => $form_data['currentUser'],
             "currentUsers" => '[0]', //$form_data['currentUsers'], 前端未做对应修改
-            "sessionTimes" => '[0]'  //$form_data['sessionTimes']
+            "sessionTimes" => '[0]',  //$form_data['sessionTimes']
+            "type" => $form_data['type']
           ]);
         if( $result ){
             return response()->json([
@@ -107,6 +109,7 @@ class TestRigs extends Controller
             "stepSize" => $form_data['stepSize'],
             "monitorPacketSize" => $form_data['monitorPacketSize'],
             "currentUser" => $form_data['currentUser'],
+            "type" => $form_data['type'],
             "lastUpdate" => date("Y-m-d h:i:sa")
           ]);
         if( $result ){
